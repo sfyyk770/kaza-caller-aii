@@ -1,63 +1,134 @@
 <html>
-  <head></head>
+  <head>
+    <title>Start Demo call</title>
+  </head>
   <body>
     <h2>Hiiw World</h2>
+    <form onsubmit="return submitForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="phone" id="phone" name="phone" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
     <script>
+function submitForm() {
+            // Get form values
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            
+            // Perform form validation
+            if (name === '' || phone === '') {
+                alert('Please fill in all fields');
+                return false;
+            }
+            
+            const data = {
+            "phone_number": "+1"+phone,
+            // "from": null,
+            // "task": "your an fundraiser agent helping a Chabad house fundraising campaign.\n\nAs a Chabad Shliach, this is my mission.\n\nAs a Jew, this is your mission.\n\nYour partnership in this front-line mission is crucial for our success.\n\n\n\nIsrael is at war.\n\nThe Land of Israel fights a physical battle.\n\nThe People of Israel fight a spiritual battle.\n\nWe are here to ignite souls, to kindle hearts, to vitalize minds, to open heavenly possibilities.\n\n\n\nWe cannot do it alone. We need your help.\n\nYou are a Shliach of G-d Al-mighty.\n\nYou are an ambassador of light in this dark world.\n\nYour Tzedakah today seeds the eternal light forever.\n\n\n\nThank you. May you, your loved one, all the nation of Israel, and all kind people everywhere be blessed with peace and prosperity, materially, spiritually—and materially and spiritually as one!",
+            "model": "enhanced",
+            "language": "eng",
+            "voice": "Derek",
+            "voice_settings": {},
+            "local_dialing": false,
+            "max_duration": "2",
+            "answered_by_enabled": false,
+            "wait_for_greeting": true,
+            "record": false,
+            "amd": false,
+            "interruption_threshold": 100,
+            "temperature": null,
+            "transfer_list": {},
+            "metadata": {},
+            // "pronunciation_guide": [
+            //   {
+            //     "word": "chabad",
+            //     "pronunciation": "ha-ba-d",
+            //     "case_sensitive": false,
+            //     "spaced": true
+            //   },
+            //   {
+            //     "word": "g-d",
+            //     "pronunciation": "god",
+            //     "case_sensitive": false,
+            //     "spaced": false
+            //   },
+            //   {
+            //     "word": "Shliach",
+            //     "pronunciation": "Shali-ach",
+            //     "case_sensitive": false,
+            //     "spaced": true
+            //   }
+            // ],
+            "start_time": null,
+            "request_data": {},
+            "tools": [],
+            "webhook": null,
+            "pathway_id":"7954ac96-4fb8-49d9-9245-dc655eb5e839"
+          }
+
+          const options = {
+            method: 'POST',
+            headers: {authorization: 'sk-478jf4gi1geu1lmg1wowsp4pdv09n0jko5ooosl1c08wp6kg17avlnqkyep4c52a69', 'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+          };
+
+          fetch('https://api.bland.ai/v1/calls', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+
+            // Submit the form
+            alert('Form submitted successfully');
+            return true;
+        }
 // Data
-const data = {
-  "phone_number": "+13234968257",
-  "from": null,
-  "task": "your an fundraiser agent helping a Chabad house fundraising campaign.\n\nAs a Chabad Shliach, this is my mission.\n\nAs a Jew, this is your mission.\n\nYour partnership in this front-line mission is crucial for our success.\n\n\n\nIsrael is at war.\n\nThe Land of Israel fights a physical battle.\n\nThe People of Israel fight a spiritual battle.\n\nWe are here to ignite souls, to kindle hearts, to vitalize minds, to open heavenly possibilities.\n\n\n\nWe cannot do it alone. We need your help.\n\nYou are a Shliach of G-d Al-mighty.\n\nYou are an ambassador of light in this dark world.\n\nYour Tzedakah today seeds the eternal light forever.\n\n\n\nThank you. May you, your loved one, all the nation of Israel, and all kind people everywhere be blessed with peace and prosperity, materially, spiritually—and materially and spiritually as one!",
-  "model": "enhanced",
-  "language": "eng",
-  "voice": "Derek",
-  "voice_settings": {},
-  "local_dialing": false,
-  "max_duration": "2",
-  "answered_by_enabled": false,
-  "wait_for_greeting": true,
-  "record": false,
-  "amd": false,
-  "interruption_threshold": 100,
-  "temperature": null,
-  "transfer_list": {},
-  "metadata": {},
-  "pronunciation_guide": [
-    {
-      "word": "chabad",
-      "pronunciation": "ha-ba-d",
-      "case_sensitive": false,
-      "spaced": true
-    },
-    {
-      "word": "g-d",
-      "pronunciation": "god",
-      "case_sensitive": false,
-      "spaced": false
-    },
-    {
-      "word": "Shliach",
-      "pronunciation": "Shali-ach",
-      "case_sensitive": false,
-      "spaced": true
-    }
-  ],
-  "start_time": null,
-  "request_data": {},
-  "tools": [],
-  "webhook": null
-}
-
-const options = {
-  method: 'POST',
-  headers: {authorization: 'sk-478jf4gi1geu1lmg1wowsp4pdv09n0jko5ooosl1c08wp6kg17avlnqkyep4c52a69', 'Content-Type': 'application/json'},
-  body: JSON.stringify(data)
-};
-
-fetch('https://api.bland.ai/v1/calls', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
+// const data = {
+//   "phone_number": "+13234968257",
+//   "from": null,
+//   "task": "your an fundraiser agent helping a Chabad house fundraising campaign.\n\nAs a Chabad Shliach, this is my mission.\n\nAs a Jew, this is your mission.\n\nYour partnership in this front-line mission is crucial for our success.\n\n\n\nIsrael is at war.\n\nThe Land of Israel fights a physical battle.\n\nThe People of Israel fight a spiritual battle.\n\nWe are here to ignite souls, to kindle hearts, to vitalize minds, to open heavenly possibilities.\n\n\n\nWe cannot do it alone. We need your help.\n\nYou are a Shliach of G-d Al-mighty.\n\nYou are an ambassador of light in this dark world.\n\nYour Tzedakah today seeds the eternal light forever.\n\n\n\nThank you. May you, your loved one, all the nation of Israel, and all kind people everywhere be blessed with peace and prosperity, materially, spiritually—and materially and spiritually as one!",
+//   "model": "enhanced",
+//   "language": "eng",
+//   "voice": "Derek",
+//   "voice_settings": {},
+//   "local_dialing": false,
+//   "max_duration": "2",
+//   "answered_by_enabled": false,
+//   "wait_for_greeting": true,
+//   "record": false,
+//   "amd": false,
+//   "interruption_threshold": 100,
+//   "temperature": null,
+//   "transfer_list": {},
+//   "metadata": {},
+//   "pronunciation_guide": [
+//     {
+//       "word": "chabad",
+//       "pronunciation": "ha-ba-d",
+//       "case_sensitive": false,
+//       "spaced": true
+//     },
+//     {
+//       "word": "g-d",
+//       "pronunciation": "god",
+//       "case_sensitive": false,
+//       "spaced": false
+//     },
+//     {
+//       "word": "Shliach",
+//       "pronunciation": "Shali-ach",
+//       "case_sensitive": false,
+//       "spaced": true
+//     }
+//   ],
+//   "start_time": null,
+//   "request_data": {},
+//   "tools": [],
+//   "webhook": null
+// }
     </script>
   </body>
 </html>
