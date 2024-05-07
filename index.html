@@ -51,7 +51,7 @@ const data = {
 const options = {
   method: 'POST',
   headers: {authorization: '<authorization>', 'Content-Type': 'application/json'},
-  body: ''+data.toString()
+  body: data
 };
 
 fetch('https://api.bland.ai/v1/calls', options)
