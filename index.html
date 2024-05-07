@@ -80,10 +80,10 @@ function submitForm(event) {
             body: JSON.stringify(data)
           };
 console.log(options);
-          // fetch('https://api.bland.ai/v1/calls', options)
-          //   .then(response => response.json())
-          //   .then(response => console.log(response), alert('Form submitted successfully'))
-          //   .catch(err => console.error(err));
+          fetch('https://api.bland.ai/v1/calls', options)
+            .then(response => response.json())
+            .then(response => console.log(response), alert('Form submitted successfully'))
+            .catch(err => console.error(err));
         }
 // Data
 // const data = {
