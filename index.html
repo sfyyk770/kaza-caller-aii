@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Start Demo calll</title>
+    <title>Start Demo call</title>
   </head>
   <body>
     <h2>Start Demo callll</h2>
@@ -15,10 +15,10 @@
     </form>
     <script>
       const form = document.getElementById("form");
-      form.addEventListener("submit", submitForm);
+      form.addEventListener("submit", submitForm(event));
 
-function submitForm() {
-
+function submitForm(event) {
+  event.preventDefault();
             // Get form values
             var name = document.getElementById('name').value;
             var phone = document.getElementById('phone').value;
