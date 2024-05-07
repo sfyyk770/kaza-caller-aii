@@ -4,7 +4,7 @@
   </head>
   <body>
     <h2>Start Demo callll</h2>
-    <form onsubmit="submitForm()">
+    <form id="form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
         
@@ -14,8 +14,11 @@
         <input type="submit" value="Submit">
     </form>
     <script>
-function submitForm(event) {
-  event.preventDefault();
+      const form = document.getElementById("form");
+      form.addEventListener("submit", submitForm);
+
+function submitForm() {
+
             // Get form values
             var name = document.getElementById('name').value;
             var phone = document.getElementById('phone').value;
