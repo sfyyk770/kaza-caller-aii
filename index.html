@@ -1,0 +1,59 @@
+<html>
+  <head></head>
+  <body>
+    <script>
+      // Headers  
+const headers = {
+   'Authorization': 'sk-478jf4gi1geu1lmg1wowsp4pdv09n0jko5ooosl1c08wp6kg17avlnqkyep4c52a69'
+};
+
+// Data
+const data = {
+  "phone_number": "+13233769784",
+  "from": null,
+  "task": "your an fundraiser agent helping a Chabad house fundraising campaign.\n\nAs a Chabad Shliach, this is my mission.\n\nAs a Jew, this is your mission.\n\nYour partnership in this front-line mission is crucial for our success.\n\n\n\nIsrael is at war.\n\nThe Land of Israel fights a physical battle.\n\nThe People of Israel fight a spiritual battle.\n\nWe are here to ignite souls, to kindle hearts, to vitalize minds, to open heavenly possibilities.\n\n\n\nWe cannot do it alone. We need your help.\n\nYou are a Shliach of G-d Al-mighty.\n\nYou are an ambassador of light in this dark world.\n\nYour Tzedakah today seeds the eternal light forever.\n\n\n\nThank you. May you, your loved one, all the nation of Israel, and all kind people everywhere be blessed with peace and prosperity, materially, spiritually—and materially and spiritually as one!",
+  "model": "enhanced",
+  "language": "eng",
+  "voice": "Derek",
+  "voice_settings": {},
+  "local_dialing": false,
+  "max_duration": "2",
+  "answered_by_enabled": false,
+  "wait_for_greeting": true,
+  "record": false,
+  "amd": false,
+  "interruption_threshold": 100,
+  "temperature": null,
+  "transfer_list": {},
+  "metadata": {},
+  "pronunciation_guide": [
+    {
+      "word": "chabad",
+      "pronunciation": "ha-ba-d",
+      "case_sensitive": false,
+      "spaced": true
+    },
+    {
+      "word": "g-d",
+      "pronunciation": "god",
+      "case_sensitive": false,
+      "spaced": false
+    },
+    {
+      "word": "Shliach",
+      "pronunciation": "Shali-ach",
+      "case_sensitive": false,
+      "spaced": true
+    }
+  ],
+  "start_time": null,
+  "request_data": {},
+  "tools": [],
+  "webhook": null
+}
+
+// API request
+await axios.post('https://api.bland.ai/v1/calls', data, {headers});
+    </script>
+  </body>
+</html>
