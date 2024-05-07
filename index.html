@@ -18,7 +18,7 @@ function submitForm() {
             // Get form values
             var name = document.getElementById('name').value;
             var phone = document.getElementById('phone').value;
-            
+            console.log(name, phone);
             // Perform form validation
             if (name === '' || phone === '') {
                 alert('Please fill in all fields');
@@ -75,11 +75,11 @@ function submitForm() {
             headers: {authorization: 'sk-478jf4gi1geu1lmg1wowsp4pdv09n0jko5ooosl1c08wp6kg17avlnqkyep4c52a69', 'Content-Type': 'application/json'},
             body: JSON.stringify(data)
           };
-
-          fetch('https://api.bland.ai/v1/calls', options)
-            .then(response => response.json())
-            .then(response => console.log(response), alert('Form submitted successfully'))
-            .catch(err => console.error(err));
+console.log(options);
+          // fetch('https://api.bland.ai/v1/calls', options)
+          //   .then(response => response.json())
+          //   .then(response => console.log(response), alert('Form submitted successfully'))
+          //   .catch(err => console.error(err));
         }
 // Data
 // const data = {
