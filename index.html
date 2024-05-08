@@ -38,10 +38,10 @@ function submitForm(event) {
             "voice": "Derek",
             "voice_settings": {},
             "local_dialing": false,
-            "max_duration": "2",
+            "max_duration": "3",
             "answered_by_enabled": false,
-            "wait_for_greeting": true,
-            "record": false,
+            "wait_for_greeting": false,
+            "record": true,
             "amd": false,
             "interruption_threshold": 50,
             "temperature": null,
@@ -68,7 +68,7 @@ function submitForm(event) {
             //   }
             // ],
             // "start_time": null,
-            "request_data": { name: name },
+            "request_data": { callers_name: name },
             // "tools": [],
             // "webhook": null,
             "pathway_id":"7954ac96-4fb8-49d9-9245-dc655eb5e839"
